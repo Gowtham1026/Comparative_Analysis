@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Statement Comparative Analysis</title>
+    <link rel="stylesheet" href="/app.py">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Financial Statements</h1>
+        <form method="post" enctype="multipart/form-data">
+            <label for="file1">Upload Balance Sheet 1</label>
+            <input type="file" name="file1" required>
+            
+            <label for="file2">Upload Balance Sheet 2</label>
+            <input type="file" name="file2" required>
+            
+            <button type="submit">Compare</button>
+        </form>
+        
+        {% if result %}
+        <div class="result">
+            <h2>Comparison Results</h2>
+            {{ result | safe }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
